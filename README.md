@@ -10,14 +10,14 @@ assets (even across multiple domains!) and to be modified from one location.
 
 ## Installation
 
-Simply download a copy of the (extremely lightweight)
+Simply include the (extremely lightweight)
 [JavaScript library](https://raw.github.com/ChrisCummins/liquid-src/master/dist/liquid-src-0.0.1.min.js)
-and include it in your HTML files (note, requires jQuery). Then create your
-links file and include that too:
+or download your own copy, then include it in your HTML files (note, requires
+jQuery). Create your links file and include that too:
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/liquid-src-0.0.1.min.js"></script>
+<script src="http://chriscummins.github.io/liquid-src/js/liquid-src-0.0.1.min.js"></script>
 <script src="js/links.js"></script>
 ```
 
