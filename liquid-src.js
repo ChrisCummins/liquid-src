@@ -3,13 +3,6 @@ var LiquidSrc = LiquidSrc || {};
 (function() {
   'use strict';
 
-  /*
-   * 3 - The ID component, and any query string attached to the end.
-   */
-  var youTubeURLRegexp = new RegExp(['^(https?:\/\/)?(www\.)?youtube\.com',
-                                     '\/watch.v=?',
-                                     '([a-zA-Z0-9\?=&]+)'].join(''));
-
   function warning(msg) {
     console.log('warning: ' + msg);
   }
@@ -23,14 +16,6 @@ var LiquidSrc = LiquidSrc || {};
     return false;
   }
 
-  function isValidYouTubeID(url) {
-    return url.match(youTubeURLRegexp) !== null;
-  }
-
-  function getYouTubeVideoID(url) {
-    return url.match(youTubeURLRegexp)[3];
-  }
-
   function linkIsValid(link, links) {
     return (link.category &&
             link.name  &&
@@ -40,20 +25,7 @@ var LiquidSrc = LiquidSrc || {};
   }
 
   function getLinkURL(link, links) {
-
-    function getYouTubeURL(value) {
-      var id = getYouTubeVideoID(value);
-      return 'http://www.youtube.com/embed/' + id;
-    }
-
-    var value = links[link.category][link.name];
-
-    if (isValidYouTubeID(value))
-      var url = getYouTubeURL(value);
-    else
-      var url = value;
-
-    return url;
+    return links[link.category][link.name];
   }
 
   function getElementCategory(element) {

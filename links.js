@@ -5,10 +5,10 @@ $.data(document.body, 'liquid-src', {
   },
 
   "iframe": {
-    "anni": "http://www.youtube.com/watch?v=cAHFq07FZig",
-    "lale": "http://www.youtube.com/watch?v=iLrNOxV4lIM",
-    "nurtan": "http://www.youtube.com/watch?v=1Ze8SirZigY",
-    "orhaniye": "http://www.youtube.com/watch?v=Q5newdqnlzY"
+    "anni": "http://www.youtube.com/embed/cAHFq07FZig",
+    "lale": "http://www.youtube.com/embed/iLrNOxV4lIM",
+    "nurtan": "http://www.youtube.com/embed/1Ze8SirZigY",
+    "orhaniye": "http://www.youtube.com/embed/Q5newdqnlzY"
   }
 
 });
