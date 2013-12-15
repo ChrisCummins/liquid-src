@@ -17,7 +17,7 @@ jQuery). Create your links file and include that too:
 
 ```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://chriscummins.github.io/liquid-src/js/liquid-src-0.0.1.min.js"></script>
+<script src="http://chriscummins.github.io/liquid-src/js/liquid-src-latest.min.js"></script>
 <script src="js/links.js"></script>
 ```
 
