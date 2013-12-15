@@ -2,26 +2,32 @@
 
 Managing a large collection of links can be a pain. What if your super-awesome
 client keeps sending you new YouTube promos to show-off on their websites? Do
-they actually expect you to `sed` your way through each of their 150 web pages?
+they actually expect you to `sed` your way through each of their 150 HTML files?
+What if there was a way to keep just a single copy of your URLs which can be
+referenced from anywhere?
 
-Liquid-src provides a simple means for you to store your collection of links in
-one single place (a `links.js` file), allowing multiple pages to share the same
-assets (even across multiple domains!) and to be modified from one location.
+## tl;dr summary
 
-## Installation
-
-Simply include the (extremely lightweight)
-[JavaScript library](https://raw.github.com/ChrisCummins/liquid-src/master/dist/liquid-src-latest.min.js)
-or download your own copy, then include it in your HTML files (note, requires
-jQuery). Create your links file and include that too:
+Liquid-src transforms links like these:
 
 ```html
+<img src="https://www.google.co.uk/images/srpr/logo11w.png"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://chriscummins.github.io/liquid-src/js/liquid-src-latest.min.js"></script>
-<script src="js/links.js"></script>
 ```
 
-Here's a sample `links.js` file:
+into links like these:
+
+```html
+<img data-src="google-logo" class="liquid-src"/>
+<script data-src="jquery-ui" class="liquid-src"></script>
+```
+
+... in less than 1KB of JavaScript. You create one single list of URLs with
+unique names for them, then you use those names in your HTML.
+
+## Getting Started
+
+To start with, we create our list of named URLs:
 
 ```js
 $.data(document.body, 'liquid-src', {
@@ -38,11 +44,19 @@ $.data(document.body, 'liquid-src', {
 });
 ```
 
-## Usage
+Let's call it `links.js`. Now, we simply include the (extremely lightweight)
+[JavaScript library](https://raw.github.com/ChrisCummins/liquid-src/master/dist/liquid-src-latest.min.js)
+and include it in your HTML files (note, requires jQuery), along with the list
+of links we just made:
 
-Any time you want to use one of your links, simple add the `liquid-src` class to
-the element, and instead of setting the `src` attribute to point to a URL, set a
-`data-src` attribute to the name which you gave the link in `links.js`. For
+```html
+<script src="http://chriscummins.github.io/liquid-src/js/liquid-src-latest.min.js"></script>
+<script src="js/links.js"></script>
+```
+
+Now, any time you want to use one of your links, simple add the `liquid-src`
+class to the element, and instead of setting the `src` attribute to point to a
+URL, set a `data-src` attribute to the name which you gave the link. For
 example, to include the Google logo from the above example:
 
 ```html
@@ -52,7 +66,7 @@ example, to include the Google logo from the above example:
 It works on any kind of tag with a `src=` attribute!
 
 ```html
-<!-- YouTube videos -->
+<!-- Embedded YouTube videos -->
 <iframe class="liquid-src" data-src="gangnam-style" width="420" height="315" frameborder="0" allowfullscreen></iframe>
 
 <!-- JavaScript libraries -->
