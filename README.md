@@ -73,6 +73,9 @@ It works on any kind of tag with a `src=` attribute!
 <script class="liquid-src" data-src="jquery-ui"/></script>
 ```
 
+For further uses, see the
+[examples section](https://github.com/ChrisCummins/liquid-src/tree/master/examples).
+
 ## License
 
 Fluid-src is licensed under the Apache License, Version 2.0. [View the license
