@@ -11,7 +11,7 @@ assets (even across multiple domains!) and to be modified from one location.
 ## Installation
 
 Simply include the (extremely lightweight)
-[JavaScript library](https://raw.github.com/ChrisCummins/liquid-src/master/dist/liquid-src-0.0.1.min.js)
+[JavaScript library](https://raw.github.com/ChrisCummins/liquid-src/master/dist/liquid-src-latest.min.js)
 or download your own copy, then include it in your HTML files (note, requires
 jQuery). Create your links file and include that too:
 
