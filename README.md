@@ -6,24 +6,26 @@ they actually expect you to `sed` your way through each of their 150 HTML files?
 What if there was a way to keep just a single copy of your URLs which can be
 referenced from anywhere?
 
-## tl;dr summary
+![Multiple URLs duplicated in multiple pages](img/before.png)
 
-Liquid-src transforms links like these:
+![Links identified by name, not by URL](img/after.png)
+
+So that this:
 
 ```html
 <img src="https://www.google.co.uk/images/srpr/logo11w.png"/>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 ```
 
-into links like these:
+Looks like this:
 
 ```html
 <img data-src="google-logo" class="liquid-src"/>
 <script data-src="jquery-ui" class="liquid-src"></script>
 ```
 
-... in less than 1KB of JavaScript. You create one single list of URLs with
-unique names for them, then you use those names in your HTML.
+You create one single list of URLs with unique names for them, then you use
+those names in your HTML.
 
 ## Getting Started
 
